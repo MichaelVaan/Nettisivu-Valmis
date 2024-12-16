@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Hub - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white">
+
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand wow animate__animated animate__fadeInLeft" href="index.html">Invest<span style="color:#28a745;">Hub</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link wow animate__animated animate__fadeInDown" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link wow animate__animated animate__fadeInDown" href="portfolio.html">PORTFOLIO</a></li>
+                        <li class="nav-item"><a class="nav-link wow animate__animated animate__fadeInDown" href="market-news.html">MARKET NEWS</a></li>
+                        <li class="nav-item"><a class="nav-link wow animate__animated animate__fadeInDown" href="resources.html">RESOURCES</a></li>
+                        <li class="nav-item"><a class="nav-link wow animate__animated animate__fadeInDown" href="contact.html">CONTACT</a></li>
+                        <li class="nav-item"><a class="nav-link wow animate__animated animate__fadeInDown" href="sign-in.html">SIGN IN</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="crypto-ticker" class="ticker-container">
+        <p id="ticker-content">Loading cryptocurrency data...</p>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <main>
+            <h1 class="display-4 wow animate__animated animate__zoomIn">INVEST <span style="color:#28a745;">SMARTER</span></h1>
+            <p class="lead wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                Welcome to InvestHub, your one-stop platform for market insights, strategies, and tools to help you make informed investment decisions. 
+                Explore our resources, track your portfolio, stay updated with market news, and connect with top investment professionals.
+            </p>
+            <a href="start-investing.html" class="btn btn-success btn-lg wow animate__animated animate__pulse animate__infinite">Start Investing</a>
+        </main>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4 wow animate__animated animate__fadeInLeft">
+                <h3>Calculator</h3>
+                <input type="text" id="calc-display" readonly class="form-control mb-2">
+                <div id="calc-buttons" class="btn-group btn-group-sm d-flex flex-wrap">
+                    <button class="btn btn-secondary" onclick="calculate('7')">7</button>
+                    <button class="btn btn-secondary" onclick="calculate('8')">8</button>
+                    <button class="btn btn-secondary" onclick="calculate('9')">9</button>
+                    <button class="btn btn-warning" onclick="calculate('/')">/</button>
+                    <button class="btn btn-secondary" onclick="calculate('4')">4</button>
+                    <button class="btn btn-secondary" onclick="calculate('5')">5</button>
+                    <button class="btn btn-secondary" onclick="calculate('6')">6</button>
+                    <button class="btn btn-warning" onclick="calculate('*')">*</button>
+                    <button class="btn btn-secondary" onclick="calculate('1')">1</button>
+                    <button class="btn btn-secondary" onclick="calculate('2')">2</button>
+                    <button class="btn btn-secondary" onclick="calculate('3')">3</button>
+                    <button class="btn btn-warning" onclick="calculate('-')">-</button>
+                    <button class="btn btn-secondary" onclick="calculate('0')">0</button>
+                    <button class="btn btn-secondary" onclick="calculate('.')">.</button>
+                    <button class="btn btn-warning" onclick="calculate('+')">+</button>
+                    <button class="btn btn-success" onclick="calculate('=')">=</button>
+                    <button class="btn btn-danger w-100" onclick="clearDisplay()">C</button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 wow animate__animated animate__fadeInUp">
+                <h3>World Clocks</h3>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <div class="clock m-2" id="clock1">
+                        <div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>
+                        <div class="number number12">12</div><div class="number number3">3</div><div class="number number6">6</div><div class="number number9">9</div>
+                        <div class="label">UTC</div>
+                    </div>
+                    <div class="clock m-2" id="clock2">
+                        <div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>
+                        <div class="number number12">12</div><div class="number number3">3</div><div class="number number6">6</div><div class="number number9">9</div>
+                        <div class="label">New York</div>
+                    </div>
+                    <div class="clock m-2" id="clock3">
+                        <div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>
+                        <div class="number number12">12</div><div class="number number3">3</div><div class="number number6">6</div><div class="number number9">9</div>
+                        <div class="label">London</div>
+                    </div>
+                    <div class="clock m-2" id="clock4">
+                        <div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>
+                        <div class="number number12">12</div><div class="number number3">3</div><div class="number number6">6</div><div class="number number9">9</div>
+                        <div class="label">Tokyo</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 wow animate__animated animate__fadeInRight">
+                <h3>Currency Exchange</h3>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" placeholder="Enter amount" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="from-currency">From:</label>
+                    <select id="from-currency" class="form-control">
+                        <option value="">Select Currency</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="to-currency">To:</label>
+                    <select id="to-currency" class="form-control">
+                        <option value="">Select Currency</option>
+                    </select>
+                </div>
+                <button id="convert-button" class="btn btn-primary btn-block">Convert</button>
+                <div id="conversion-results" class="conversion-results mt-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 mb-3 wow animate__animated animate__fadeInUp">
+        <p>© 2024 InvestHub. All Rights Reserved</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="script.js" defer></script>
+</body>
+</html>

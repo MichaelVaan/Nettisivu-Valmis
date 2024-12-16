@@ -1,0 +1,109 @@
+body {
+    background: #000 url('background.jpg') no-repeat center center/cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.ticker-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffdd57;
+    font-family: Arial, sans-serif;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.ticker-container p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker-scroll 25s linear infinite;
+}
+
+@keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.clock {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+}
+
+.clock .number {
+    position: absolute;
+    font-size: 0.7rem;
+    text-align: center;
+    color: black;
+}
+
+.clock .number12 { top: 4px; left: 50%; transform: translateX(-50%); }
+.clock .number3 { top: 50%; right: 4px; transform: translateY(-50%); }
+.clock .number6 { bottom: 4px; left: 50%; transform: translateX(-50%); }
+.clock .number9 { top: 50%; left: 4px; transform: translateY(-50%); }
+
+.clock .hand {
+    position: absolute;
+    background: #000;
+    transform-origin: bottom center;
+}
+
+.hour {
+    width: 3px;
+    height: 25px;
+    top: 25%;
+    left: 50%;
+    transform-origin: 50% 90%;
+}
+
+.minute {
+    width: 2px;
+    height: 35px;
+    top: 15%;
+    left: 50%;
+    transform-origin: 50% 90%;
+}
+
+.second {
+    width: 1px;
+    height: 40px;
+    top: 10%;
+    left: 50%;
+    background: red;
+    transform-origin: 50% 90%;
+}
+
+.label {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+#calc-display {
+    background: #fff;
+    color: #000;
+    text-align: right;
+}
